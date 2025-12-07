@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vivaan Badwe — Programmer & Musician</title>
-
   <style>
     * {
       margin: 0;
@@ -14,47 +13,42 @@
     }
 
     body {
-      background: #fafafa;
+      background: #ffffff;
       color: #111;
       overflow-x: hidden;
     }
 
-    /* NAV */
+    /* NAVBAR */
     nav {
-      position: fixed;
-      top: 0;
       width: 100%;
-      padding: 25px 60px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      padding: 20px 50px;
+      position: fixed;
+      top: 0;
       backdrop-filter: blur(20px);
       background: rgba(255,255,255,0.6);
-      border-bottom: 1px solid #eee;
-      z-index: 100;
+      z-index: 10;
+      border-bottom: 1px solid #e5e5e5;
     }
 
     nav .logo {
-      font-size: 26px;
-      font-weight: 800;
-      background: linear-gradient(90deg,#ff6ec7,#8b7bff,#4cc6ff);
-      -webkit-background-clip: text;
-      color: transparent;
+      font-size: 22px;
+      font-weight: 700;
       letter-spacing: -1px;
     }
 
     nav ul {
       display: flex;
+      gap: 30px;
       list-style: none;
-      gap: 28px;
     }
 
     nav ul li a {
       text-decoration: none;
-      color: #222;
+      color: #111;
       font-size: 16px;
-      font-weight: 500;
-      transition: 0.25s ease;
+      transition: 0.2s;
     }
 
     nav ul li a:hover {
@@ -63,7 +57,6 @@
 
     /* HERO */
     .hero {
-      padding-top: 150px; /* fixes nav overlap */
       height: 100vh;
       display: flex;
       flex-direction: column;
@@ -74,28 +67,41 @@
     }
 
     .hero h1 {
-      font-size: 70px;
-      font-weight: 900;
-      background: linear-gradient(90deg,#ff6ec7,#8b7bff,#4cc6ff);
-      -webkit-background-clip: text;
-      color: transparent;
-      animation: fadeUp 1s ease;
-    }
-
-    @keyframes fadeUp {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+      font-size: 60px;
+      font-weight: 800;
+      letter-spacing: -2px;
     }
 
     .hero p {
-      margin-top: 18px;
       font-size: 22px;
+      margin-top: 20px;
       color: #555;
       max-width: 600px;
-      line-height: 1.6;
     }
 
-    /* BUTTONS */
+    /* SECTION */
+    .section {
+      padding: 100px 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .desc {
+      font-size: 18px;
+      max-width: 700px;
+      color: #444;
+    }
+
+    /* LINKS */
     .socials {
       margin-top: 40px;
       display: flex;
@@ -103,93 +109,64 @@
     }
 
     .socials a {
-      padding: 12px 24px;
-      background: #fff;
-      border-radius: 14px;
-      border: 1px solid #ddd;
       text-decoration: none;
-      font-weight: 600;
-      color: #333;
-      transition: 0.25s ease;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      font-size: 18px;
+      padding: 12px 25px;
+      border-radius: 12px;
+      background: #111;
+      color: white;
+      transition: 0.2s;
     }
 
     .socials a:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      opacity: 0.7;
     }
 
-    /* SECTIONS */
-    section {
-      padding: 120px 10%;
-      text-align: center;
-    }
-
-    section h2 {
-      font-size: 42px;
-      font-weight: 800;
-      margin-bottom: 20px;
-      background: linear-gradient(90deg,#8b7bff,#ff6ec7);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    section p {
-      max-width: 700px;
-      margin: auto;
-      font-size: 20px;
-      color: #555;
-      line-height: 1.7;
-    }
-
-    /* FOOTER */
     footer {
       padding: 40px;
       text-align: center;
+      color: #777;
       font-size: 14px;
-      color: #666;
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <div class="logo">VIVAAN</div>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#music">Music</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<nav>
+  <div class="logo">VIVAAN BADWE</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#music">Music</a></li>
+    <li><a href="#projects">Projects</a></li>
+  </ul>
+</nav>
 
-  <section class="hero" id="home">
-    <h1>Vivaan Badwe</h1>
-    <p>Programmer • Musician • Creator<br>Building things that feel modern, minimal and aesthetic.</p>
-    <div class="socials">
-      <a href="https://youtube.com/@vivaanbadwe">YouTube</a>
-      <a href="https://open.spotify.com/artist/2jbY9PiF7gZpbYeXzHzWNG">Spotify</a>
-    </div>
-  </section>
+<section class="hero">
+  <h1>Programmer & Musician</h1>
+  <p>I build modern digital experiences and create music that inspires. Welcome to my world of code × creativity.</p>
+</section>
 
-  <section id="music">
-    <h2>My Music</h2>
-    <p>I make phonk, pop, and atmospheric tracks. Listen on Spotify and YouTube.</p>
-  </section>
+<section class="section" id="about">
+  <div class="title">About Me</div>
+  <div class="desc">Hey, I'm Vivaan — a passionate programmer and musician. I love building apps, experimenting with new tech, and producing tracks across multiple genres.</div>
+</section>
 
-  <section id="projects">
-    <h2>Programming Projects</h2>
-    <p>Modern UI designs, tools, web apps — clean, animated & futuristic.</p>
-  </section>
+<section class="section" id="music">
+  <div class="title">My Music</div>
+  <div class="desc">Listen to my latest releases and follow my journey as an artist.</div>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Want to collab? Reach me on my socials — always open for new ideas.</p>
-  </section>
+  <div class="socials">
+    <a href="https://youtube.com/@vivaanbadwe">YouTube</a>
+    <a href="https://open.spotify.com/artist/2jbY9PiF7gZpbYeXzHzWNG">Spotify</a>
+  </div>
+</section>
 
-  <footer>
-    © 2025 Vivaan Badwe — All Rights Reserved
-  </footer>
+<section class="section" id="projects">
+  <div class="title">Projects</div>
+  <div class="desc">I work on modern web apps, Python tools, and creative digital projects. New portfolio coming soon.</div>
+</section>
+
+<footer>© 2025 Vivaan Badwe — All Rights Reserved</footer>
 
 </body>
 </html>
