@@ -14,114 +14,109 @@
     }
 
     body {
-      background: linear-gradient(135deg, #ffe6f7, #e3f0ff, #fff6d9);
-      background-size: 300% 300%;
-      animation: bgMove 12s ease infinite;
+      background: #fafafa;
       color: #111;
       overflow-x: hidden;
     }
 
-    @keyframes bgMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* NAVBAR */
+    /* NAV */
     nav {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      padding: 20px 50px;
       position: fixed;
       top: 0;
-      backdrop-filter: blur(25px);
-      background: rgba(255,255,255,0.45);
-      z-index: 10;
-      border-bottom: 1px solid rgba(255,255,255,0.6);
+      width: 100%;
+      padding: 25px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(20px);
+      background: rgba(255,255,255,0.6);
+      border-bottom: 1px solid #eee;
+      z-index: 100;
     }
 
     nav .logo {
       font-size: 26px;
       font-weight: 800;
-      letter-spacing: -1px;
-      background: linear-gradient(90deg,#ff63b4,#6f72ff,#53d6ff);
+      background: linear-gradient(90deg,#ff6ec7,#8b7bff,#4cc6ff);
       -webkit-background-clip: text;
       color: transparent;
+      letter-spacing: -1px;
     }
 
     nav ul {
       display: flex;
-      gap: 30px;
       list-style: none;
+      gap: 28px;
     }
 
     nav ul li a {
       text-decoration: none;
-      color: #333;
+      color: #222;
       font-size: 16px;
-      transition: 0.2s;
       font-weight: 500;
+      transition: 0.25s ease;
     }
 
     nav ul li a:hover {
-      color: #ff63b4;
+      opacity: 0.5;
     }
 
     /* HERO */
     .hero {
-      padding-top: 120px;
+      padding-top: 150px; /* fixes nav overlap */
       height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       text-align: center;
       padding: 0 20px;
     }
 
     .hero h1 {
-      font-size: 65px;
+      font-size: 70px;
       font-weight: 900;
-      background: linear-gradient(90deg,#ff63b4,#6f72ff,#53d6ff);
+      background: linear-gradient(90deg,#ff6ec7,#8b7bff,#4cc6ff);
       -webkit-background-clip: text;
       color: transparent;
-      animation: pop 1.2s ease;
+      animation: fadeUp 1s ease;
     }
 
-    @keyframes pop {
-      0% { transform: scale(0.8); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     .hero p {
-      margin-top: 20px;
+      margin-top: 18px;
       font-size: 22px;
-      opacity: 0.7;
+      color: #555;
       max-width: 600px;
+      line-height: 1.6;
     }
 
-    /* SOCIAL BUTTONS */
+    /* BUTTONS */
     .socials {
       margin-top: 40px;
       display: flex;
-      gap: 25px;
+      gap: 20px;
     }
 
     .socials a {
-      padding: 12px 22px;
-      border-radius: 15px;
+      padding: 12px 24px;
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid #ddd;
       text-decoration: none;
       font-weight: 600;
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255,255,255,0.6);
-      background: rgba(255,255,255,0.45);
-      transition: 0.3s ease;
+      color: #333;
+      transition: 0.25s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
     }
 
     .socials a:hover {
-      transform: translateY(-4px) scale(1.05);
-      background: rgba(255,255,255,0.7);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     }
 
     /* SECTIONS */
@@ -134,7 +129,7 @@
       font-size: 42px;
       font-weight: 800;
       margin-bottom: 20px;
-      background: linear-gradient(90deg,#6f72ff,#ff63b4);
+      background: linear-gradient(90deg,#8b7bff,#ff6ec7);
       -webkit-background-clip: text;
       color: transparent;
     }
@@ -142,21 +137,22 @@
     section p {
       max-width: 700px;
       margin: auto;
-      opacity: 0.7;
       font-size: 20px;
-      line-height: 1.6;
+      color: #555;
+      line-height: 1.7;
     }
 
     /* FOOTER */
     footer {
       padding: 40px;
       text-align: center;
-      opacity: 0.5;
       font-size: 14px;
+      color: #666;
     }
   </style>
 </head>
 <body>
+
   <nav>
     <div class="logo">VIVAAN</div>
     <ul>
@@ -169,7 +165,7 @@
 
   <section class="hero" id="home">
     <h1>Vivaan Badwe</h1>
-    <p>Programmer • Musician • Creator<br>Crafting code & sound that feels modern, clean, and aesthetic.</p>
+    <p>Programmer • Musician • Creator<br>Building things that feel modern, minimal and aesthetic.</p>
     <div class="socials">
       <a href="https://youtube.com/@vivaanbadwe">YouTube</a>
       <a href="https://open.spotify.com/artist/2jbY9PiF7gZpbYeXzHzWNG">Spotify</a>
@@ -178,21 +174,23 @@
 
   <section id="music">
     <h2>My Music</h2>
-    <p>Creating pop, phonk, and aesthetic sonic vibes. Stream my latest tracks on Spotify and YouTube.</p>
+    <p>I make phonk, pop, and atmospheric tracks. Listen on Spotify and YouTube.</p>
   </section>
 
   <section id="projects">
     <h2>Programming Projects</h2>
-    <p>I build modern websites, apps, UI concepts, and tools — always clean, animated, and futuristic.</p>
+    <p>Modern UI designs, tools, web apps — clean, animated & futuristic.</p>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Want to collaborate? Reach me through my socials — always open to new ideas.</p>
+    <p>Want to collab? Reach me on my socials — always open for new ideas.</p>
   </section>
 
   <footer>
     © 2025 Vivaan Badwe — All Rights Reserved
   </footer>
+
 </body>
 </html>
+
