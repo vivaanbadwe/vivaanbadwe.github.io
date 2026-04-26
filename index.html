@@ -8,16 +8,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* === SAME STYLE YOU SHOULD ALSO USE IN 404 === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  margin: 0;
   background: black;
   color: #00ffcc;
   font-family: 'Orbitron', sans-serif;
+  overflow-x: hidden;
 }
 
-/* scanlines */
+/* CRT EFFECT */
 body::after {
   content: "";
   position: fixed;
@@ -33,46 +37,114 @@ body::after {
   pointer-events: none;
 }
 
-/* nav */
+/* NAV */
 nav {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 20px 40px;
-  border-bottom: 1px solid #00ffcc33;
+  position: fixed;
+  top: 0;
   background: rgba(0,0,0,0.7);
+  border-bottom: 1px solid #00ffcc33;
 }
 
 .logo {
   font-family: 'Press Start 2P', cursive;
   font-size: 12px;
+  text-shadow: 0 0 10px #00ffcc;
 }
 
-/* hero */
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: #00ffcc;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff;
+}
+
+/* HERO */
 .hero {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
   text-align: center;
+  padding: 0 20px;
 }
 
 .hero h1 {
+  font-size: 42px;
   text-shadow: 0 0 20px #00ffcc;
 }
 
-/* sections */
+.hero p {
+  max-width: 600px;
+  color: #aaa;
+}
+
+/* SECTION */
 .section {
-  padding: 100px 20px;
+  padding: 120px 40px;
   text-align: center;
 }
 
 .title {
+  font-size: 28px;
+  margin-bottom: 20px;
   color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff;
 }
 
-/* ref banner */
+.desc {
+  max-width: 700px;
+  margin: auto;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* BUTTONS */
+.socials {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.socials a {
+  padding: 10px 18px;
+  border: 1px solid #00ffcc;
+  text-decoration: none;
+  color: #00ffcc;
+  transition: 0.2s;
+}
+
+.socials a:hover {
+  background: #00ffcc;
+  color: black;
+  box-shadow: 0 0 15px #00ffcc;
+}
+
+/* FOOTER */
+footer {
+  padding: 40px;
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+}
+
+/* REF BOX */
 #refBox {
   position: fixed;
   bottom: 20px;
@@ -82,6 +154,7 @@ nav {
   border: 1px solid #00ffcc;
   padding: 10px 15px;
   display: none;
+  font-size: 12px;
 }
 </style>
 </head>
@@ -90,20 +163,55 @@ nav {
 
 <nav>
   <div class="logo">VIVAAN.EXE</div>
+  <ul>
+    <li><a href="#about">ABOUT</a></li>
+    <li><a href="#music">MUSIC</a></li>
+    <li><a href="#projects">PROJECTS</a></li>
+  </ul>
 </nav>
 
 <section class="hero">
   <h1>> booting vivaan...</h1>
-  <p>code • music • minecraft</p>
-</section>
-
-<section class="section">
-  <div class="title">ABOUT</div>
   <p>
-    i build stuff, break stuff, fix it again.<br>
-    also make music and spend too long in minecraft worlds.
+    programmer • musician • minecraft enjoyer<br><br>
+    i build things on the internet and make music when everything’s quiet.
   </p>
 </section>
+
+<section class="section" id="about">
+  <div class="title">ABOUT_ME</div>
+  <div class="desc">
+    hey, i'm vivaan.<br><br>
+    i like turning random ideas into real things — sometimes useful, sometimes chaotic.<br>
+    coding is my main thing, but music is where i experiment the most.<br><br>
+    also yes, i will absolutely disappear for hours into minecraft and call it “productive”.
+  </div>
+</section>
+
+<section class="section" id="music">
+  <div class="title">MUSIC.LOG</div>
+  <div class="desc">
+    most tracks start as late-night thoughts and somehow become full projects.<br>
+    if you’re into discovering stuff that isn’t over-polished, you might like it.
+  </div>
+
+  <div class="socials">
+    <a href="https://youtube.com/@vivaanbadwe">YOUTUBE</a>
+    <a href="https://open.spotify.com/artist/6d0Sv0RCFt215eHo9C51Wk">SPOTIFY</a>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="title">PROJECTS.EXE</div>
+  <div class="desc">
+    web apps, python tools, experiments that got out of hand.<br><br>
+    some are clean. some are messy. all of them taught me something.
+  </div>
+</section>
+
+<footer>
+  © 2026 VIVAAN BADWE // SYSTEM ONLINE
+</footer>
 
 <div id="refBox"></div>
 
@@ -114,11 +222,13 @@ if (ref) {
   const box = document.getElementById("refBox");
   box.style.display = "block";
 
+  const clean = ref.replace(/[^a-zA-Z0-9_-]/g, "");
+
   const messages = [
-    "you spawned here from " + ref,
-    "ref detected: " + ref,
-    "portal opened from " + ref,
-    "yo... you came from " + ref
+    "spawned from " + clean,
+    "portal opened via " + clean,
+    "ref detected: " + clean,
+    "you came from " + clean + " 👀"
   ];
 
   box.textContent = messages[Math.floor(Math.random() * messages.length)];
