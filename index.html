@@ -1,199 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vivaan Badwe</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vivaan Badwe — Programmer & Musician</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* original css */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    body {
+      background: #ffffff;
+      color: #111;
+      overflow-x: hidden;
+    }
 
-body {
-  background: black;
-  color: #00ffcc;
-  font-family: 'Orbitron', sans-serif;
-  overflow-x: hidden;
-}
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 50px;
+      position: fixed;
+      top: 0;
+      backdrop-filter: blur(20px);
+      background: rgba(255,255,255,0.6);
+      z-index: 10;
+      border-bottom: 1px solid #e5e5e5;
+    }
 
-/* CRT SCANLINES */
-body::after {
-  content: "";
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(0,255,200,0.05),
-    rgba(0,255,200,0.05) 1px,
-    transparent 1px,
-    transparent 3px
-  );
-  pointer-events: none;
-}
+    nav .logo {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
 
-/* NAV */
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
-  border-bottom: 1px solid #00ffcc33;
-  background: rgba(0,0,0,0.7);
-  position: fixed;
-  width: 100%;
-}
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
 
-.logo {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 14px;
-  text-shadow: 0 0 10px #00ffcc;
-}
+    nav ul li a {
+      text-decoration: none;
+      color: #111;
+      font-size: 16px;
+      transition: 0.2s;
+    }
 
-nav ul {
-  display: flex;
-  gap: 25px;
-  list-style: none;
-}
+    nav ul li a:hover {
+      opacity: 0.5;
+    }
 
-nav a {
-  text-decoration: none;
-  color: #00ffcc;
-  transition: 0.2s;
-}
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
 
-nav a:hover {
-  color: #ff00ff;
-  text-shadow: 0 0 10px #ff00ff;
-}
+    .hero h1 {
+      font-size: 60px;
+      font-weight: 800;
+      letter-spacing: -2px;
+    }
 
-/* HERO */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  text-align: center;
-}
+    .hero p {
+      font-size: 22px;
+      margin-top: 20px;
+      color: #555;
+      max-width: 600px;
+    }
 
-.hero h1 {
-  font-size: 48px;
-  text-shadow: 0 0 20px #00ffcc;
-}
+    .section {
+      padding: 100px 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
 
-.hero p {
-  max-width: 600px;
-  color: #aaa;
-}
+    .title {
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
 
-/* SECTIONS */
-.section {
-  padding: 120px 20px;
-  text-align: center;
-}
+    .desc {
+      font-size: 18px;
+      max-width: 700px;
+      color: #444;
+    }
 
-.title {
-  font-size: 32px;
-  margin-bottom: 20px;
-  text-shadow: 0 0 10px #ff00ff;
-}
+    .socials {
+      margin-top: 40px;
+      display: flex;
+      gap: 20px;
+    }
 
-.desc {
-  max-width: 700px;
-  margin: auto;
-  color: #ccc;
-}
+    .socials a {
+      text-decoration: none;
+      font-size: 18px;
+      padding: 12px 25px;
+      border-radius: 12px;
+      background: #111;
+      color: white;
+      transition: 0.2s;
+    }
 
-/* BUTTONS */
-.socials {
-  margin-top: 30px;
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
+    .socials a:hover {
+      opacity: 0.7;
+    }
 
-.socials a {
-  padding: 12px 20px;
-  border: 1px solid #00ffcc;
-  text-decoration: none;
-  color: #00ffcc;
-  transition: 0.2s;
-}
+    footer {
+      padding: 40px;
+      text-align: center;
+      color: #777;
+      font-size: 14px;
+    }
 
-.socials a:hover {
-  background: #00ffcc;
-  color: black;
-  box-shadow: 0 0 15px #00ffcc;
-}
-
-/* FOOTER */
-footer {
-  padding: 30px;
-  text-align: center;
-  color: #666;
-  font-size: 12px;
-}
-</style>
+    /* NEW tiny banner (matches style) */
+    #refBanner {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #111;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      display: none;
+      z-index: 999;
+    }
+  </style>
 </head>
 
 <body>
 
 <nav>
-  <div class="logo">Vivaan Badwe</div>
+  <div class="logo">VIVAAN BADWE</div>
   <ul>
-    <li><a href="#about">ABOUT</a></li>
-    <li><a href="#music">MUSIC</a></li>
-    <li><a href="#projects">PROJECTS</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#music">Music</a></li>
+    <li><a href="#projects">Projects</a></li>
   </ul>
 </nav>
 
 <section class="hero">
-  <h1>> LOADING APPLET - VIVAAN_BADWE.EXE</h1>
+  <h1>Hey, I’m Vivaan.</h1>
   <p>
-    programmer. musician. minecraft enjoyer.<br><br>
-    i build things that live on the internet and make music that hits at 2am.
+    I write code, make music, and spend way too much time in Minecraft.<br><br>
+    This is my little corner of the internet where all of that somehow connects.
   </p>
 </section>
 
 <section class="section" id="about">
-  <div class="title">ABOUT_ME</div>
+  <div class="title">About Me</div>
   <div class="desc">
-    hey, i'm vivaan.<br><br>
-    i write code, break stuff, fix it again, and somehow turn ideas into real things.<br>
-    when i'm not coding, i'm making music or grinding minecraft worlds like it's a second life.
+    I’m into building things that actually feel fun to use — not just “look good”.<br><br>
+    Sometimes it’s web apps, sometimes random experiments, sometimes ideas that probably shouldn’t exist… but do anyway.
   </div>
 </section>
 
 <section class="section" id="music">
-  <div class="title">MUSIC.LOG</div>
+  <div class="title">Music</div>
   <div class="desc">
-    late-night ideas turned into sound.<br>
-    headphones recommended.
+    Most of my tracks start as late-night ideas and somehow turn into full songs.<br>
+    If you like discovering new sounds, you’ll probably find something here.
   </div>
 
   <div class="socials">
-    <a href="https://youtube.com/@vivaanbadwe">YOUTUBE</a>
-    <a href="https://open.spotify.com/artist/6d0Sv0RCFt215eHo9C51Wk">SPOTIFY</a>
+    <a href="https://youtube.com/@vivaanbadwe">YouTube</a>
+    <a href="https://open.spotify.com/artist/6d0Sv0RCFt215eHo9C51Wk">Spotify</a>
   </div>
 </section>
 
 <section class="section" id="projects">
-  <div class="title">PROJECTS.EXE</div>
+  <div class="title">Projects</div>
   <div class="desc">
-    web apps, python experiments, random ideas that got out of hand.<br>
-    some useful. some chaotic. all mine. Currently learning java!
+    A mix of useful tools, creative builds, and “what happens if I try this?” kind of ideas.<br><br>
+    Some are polished. Some are chaotic. All are fun.(Learning Java)
   </div>
 </section>
 
 <footer>
-  © 2026 VIVAAN BADWE // SYSTEM ONLINE
+  © 2026 Vivaan Badwe
 </footer>
+
+<!-- REFERRAL BANNER -->
+<div id="refBanner"></div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const ref = params.get("ref");
+
+  if (ref) {
+    const banner = document.getElementById("refBanner");
+
+    // Clean up the ref text (avoid weird stuff)
+    const safeRef = ref.replace(/[^a-zA-Z0-9_-]/g, "");
+
+    banner.textContent = "You came from " + safeRef + " 👀";
+    banner.style.display = "block";
+
+    // auto-hide after 5 sec
+    setTimeout(() => {
+      banner.style.display = "none";
+    }, 5000);
+  }
+</script>
 
 </body>
 </html>
